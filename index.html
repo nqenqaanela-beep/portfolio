@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anela Nqenqa | Web Developer</title>
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    :root{--bg:#cb1f7d; --card:#0a0a28; --accent:#ff4d8d; --text:#c176a4; --text-dim:#a0a0a0;}
+    
+    body{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:linear-gradient(135deg, #0a0a0f 0%, #42173f 100%);
+      color:var(--text); line-height:1.6; scroll-behavior:smooth;
+    }
+    
+    section{padding:100px 20px; max-width:1200px; margin:0 auto;}
+    h2{font-size:2.5rem; margin-bottom:40px; color:var(--accent); text-align:center;}
+    
+    nav{position:fixed; top:0; width:100%; background:rgba(10,10,15,0.9); backdrop-filter:blur(10px); padding:20px 0; z-index:1000; border-bottom:1px solid rgba(255,77,141,0.2);}
+    nav ul{list-style:none; display:flex; justify-content:center; gap:40px;}
+    nav a{color:var(--text); text-decoration:none; font-weight:500; transition:color 0.3s;}
+    nav a:hover{color:var(--accent);}
+    
+    #home{min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;}
+    #home h1{font-size:3.5rem; margin-bottom:20px;}
+    #home p{font-size:1.3rem; color:var(--text-dim); margin-bottom:30px;}
+    
+    .btn{display:inline-block; padding:14px 32px; background:var(--accent); color:white; text-decoration:none; border-radius:8px; font-weight:600; transition:transform 0.3s; border:none; cursor:pointer; font-size:1rem;}
+    .btn:hover{transform:translateY(-3px);}
+    
+    /* ABOUT */
+    .about-container{display:flex; gap:60px; align-items:flex-start; max-width:1100px; margin:0 auto;}
+    .about-image img{width:320px; height:420px; object-fit:cover; border-radius:12px; border:3px solid var(--accent); flex-shrink:0;}
+    .about-content{flex:1; background:var(--card); padding:40px; border-radius:12px; min-height:420px;}
+    .about-content h2{text-align:left; margin-bottom:25px;}
+    .about-content p{font-size:1.1rem; line-height:1.8; margin-bottom:20px; color:var(--text);}
+    
+    
+#techstack{
+  padding:100px 20px;
+}
+
+.techstack-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.skill-grid{
+  display: flex;
+    justify-content: space-evenly;
+}
+
+.skill-card{
+    background: var(--card);
+    padding: 35px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid rgba(255, 77, 141, 0.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    width: 150px;
+    transition: all 0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--accent);
+  box-shadow:0 10px 30px rgba(255,77,141,0.3);
+}
+    /* PROJECTS - 1 BOX VERSION */
+    .projects-box{
+      background:var(--card);
+      padding:70px 50px;
+      border-radius:12px;
+      text-align:center;
+      border:2px solid rgba(255,77,141,0.3);
+      margin-top:40px;
+    }
+    .projects-box p{
+      font-size:1.2rem;
+      margin-bottom:30px;
+      color:var(--text-dim);
+    }
+    
+    /* CONTACT FORM */
+    /* CONTACT - FORM + INFO SIDE BY SIDE */
+#contact{
+  padding:100px 20px;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+}
+
+nav {
+  padding: 20px;
+  background-color: transparent;
+}
+
+nav {
+  text-decoration: none;
+  color: #3b82f6;
+  font-size: bold;
+}
+.contact-wrapper{
+  display:flex;
+  gap:50px;
+  max-width:1000px;
+  margin:40px auto 0;
+  align-items:flex-start;
+}
+/* CREDENTIALS - BIG PROJECT-STYLE BLOCKS */
+#credentials{
+  padding:100px 20px;
+  background:rgba(255,77,141,0.03);
+}
+
+.badge-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); /* BIG blocks like projects */
+  gap:30px;
+  margin-top:40px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.badge-card{
+  background:var(--card);
+  padding:50px 30px; /* Taller + wider padding */
+  border-radius:16px; /* Bigger radius like project cards */
+  text-align:center;
+  border:2px solid rgba(255,77,141,0.2);
+  transition:all 0.3s;
+  min-height:220px; /* Force height like project cards */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.badge-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--accent);
+  box-shadow:0 15px 40px rgba(255,77,141,0.4); /* Stronger glow like projects */
+}
+
+.badge-icon{
+  font-size:4rem; /* BIG icon like project image */
+  margin-bottom:20px;
+}
+
+.badge-card h3{
+  color:var(--accent);
+  font-size:1.5rem; /* Bigger title */
+  margin-bottom:12px;
+  font-weight:700;
+}
+
+.badge-card p{
+  color:var(--text-dim);
+  font-size:1.1rem; /* Bigger text */
+  line-height:1.6;
+}
+/* --- Contact Section Layout --- */
+#contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1a122c; /* Matches your dark purple background */
+}
+
+.section-title {
+    color: #ff66b2; /* Matches your pink heading color */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Makes both blocks the exact same height */
+    gap: 30px; /* Space between the two blocks */
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Ensures it stacks nicely on mobile screens */
+}
+
+/* --- The Navy Blocks (Cards) --- */
+.contact-card {
+    background: linear-gradient(145deg, #0d1530, #080d22); /* Dark navy gradient */
+    border: 1px solid rgba(255, 102, 178, 0.2); /* Subtle pinkish/blue border glow */
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1; /* Gives them equal width */
+    min-width: 320px; /* Prevents them from getting too squished */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    text-align: left; /* Aligns text inside the cards to the left */
+    box-sizing: border-box;
+}
+
+/* --- Form Fields Styling --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #1e295d;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Light up the inputs when clicked */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff66b2; 
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid #3b82f6; /* Blue border like your mockup */
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* --- Info Card Specifics --- */
+.info-card h3 {
+    color: #ff66b2;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #b3b9d1;
+    line-height: 1.6;
+}
+
+.info-details {
+    margin-top: 30px;
+}
+
+.info-details p {
+    margin: 12px 0;
+}
+
+.info-details a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-details a:hover {
+    text-decoration: underline;
+    color: #ff66b2;
+}
+  </style>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#TechStack">TechStack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#Credentials">Credentials & Badges</a></li>
+      <li><a href="#contact-section">Get In Touch</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <div>
+      <h1>Hi, I'm Anela Nqenqa</h1>
+      <p>Aspiring Web Developer | LCA Student | Turning designs into real websites</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="IMG_2114.jpg" alt="Anela Nqenqa">
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>Hi, I'm Anela! I am an aspiring Web Developer based in Cape town, currently studying at Life Choices Academy. I absolutly love the magic of turning creative designs into real, fully functioning websites.</p><br>
+        <p>My ultimate goal is to build fast, accessible sites that solve real-world problems. To make that happen, I am leveling up my skills daily in HTML, CSS, JavaScript, Bootstrap, GitHub, while constantly adding fresh new projects to my portfolio!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="TechStack">
+    <h2>Tech Stack</h2>
+    <div class="skill-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">Bootstrap</div>
+      <div class="skill-card">GitHub</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS - 1 BOX WITH GITHUB LINK -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-box">
+      <p>You can view all my projects on GitHub</p>
+      <a href="https://github.com/nqenqaanela-beep" target="_blank" class="btn">View All Projects on GitHub</a>
+    </div>
+  </section>
+
+  <section id="Credentials">
+  <h2>Credentials & Badges</h2>
+  
+  <div class="badge-grid">
+    <div class="badge-card">
+      <div class="badge-icon">📊</div>
+      <h3>Cisco Networking Academy</h3>
+      <p>Fundamental to Data Science</p>
+    </div>
+    
+    <div class="badge-card">
+      <div class="badge-icon">🛡️</div>
+      <h3>Cisco Networking Academy</h3>
+      <p>Networking Basics / Cybersecurity</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact-section">
+    <h2 class="section-title">Get In Touch</h2>
+    
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-card">
+            <input type="hidden" name="access_key" value="69de037d-1dd6-470d-93f0-062e5f50a3ef">
+            
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email Address" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="message" placeholder="Type your message here...." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="contact-card contact-info">
+            <h3>Let's connect</h3>
+            <p class="connect-text">Have a project in mind or just want to chat? Drop me a message!</p>
+            
+            <div class="info-details">
+                <p><strong>Email:</strong> <a href="mailto:nqenqaanela@gmail.com">nqenqaanela@gmail.com</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/nqenqaanela-beep" target="_blank">github.com/nqenqaanela-beep</a></p>
+                <p><strong>Location:</strong> Cape Town, South Africa</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <footer>
+    <p>© 2026 Anela Nqenqa. "Every line of code leads here" future Me</p>
+  </footer>
+
+</body>
+</html>
