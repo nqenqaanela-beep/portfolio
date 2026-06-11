@@ -3,7 +3,7 @@
 Welcome to my personal developer portfolio web application! This project showcases my journey, skills, credentials, and projects as an aspiring web developer at Life Choices Academy.
 
 ## 🔗 Live Demo
-Check out the live website here: **[http://127.0.0.1:5500/index.html]**
+Check out the live website here: **[https://github.com/nqenqaanela-beep/portfolio]**
 
 ---
 
