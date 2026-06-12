@@ -286,6 +286,27 @@ nav {
     text-decoration: underline;
     color: #ff66b2;
 }
+
+ @media (max-width:768) {
+
+  #home, .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: centre;
+    padding: 20px;
+  }
+
+  .about-text {
+    margin-top: 20px;
+    max-width: 100;
+  }
+
+  .about-image{
+    max-width: 90%;
+    height: auto;
+  }
+ }
+
   </style>
 
   <nav>
@@ -316,6 +337,7 @@ nav {
         <h2>About Me</h2>
         <p>Hi, I'm Anela! I am an aspiring Web Developer based in Cape town, currently studying at Life Choices Academy. I absolutly love the magic of turning creative designs into real, fully functioning websites.</p><br>
         <p>My ultimate goal is to build fast, accessible sites that solve real-world problems. To make that happen, I am leveling up my skills daily in HTML, CSS, JavaScript, Bootstrap, GitHub, while constantly adding fresh new projects to my portfolio!</p>
+        <meta name="viewport" content="width=device-width, initial-scale=1,0">
       </div>
     </div>
   </section>
